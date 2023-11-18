@@ -1,0 +1,198 @@
+.wrap {
+    width: 100%;
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    background-color: #fff;
+    .catatan-aktif {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+    .wrap-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        .lightCat {
+            color: #333;
+            margin-top: 20px;
+        }
+        .card {
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            background-color: transparent;
+            border: 1px solid #ff008c;
+            border-radius: 10px;
+            position: relative;
+            &-desc {
+                position: relative;
+                width: 100%;
+                padding: 0px 0px 20px 0px;
+                margin-bottom: 30px;
+                .judul {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #333;
+                }
+                .date {
+                    font-size: 10px;
+                    font-weight: bold;
+                    margin-bottom: 20px;
+                    color: #333;
+                }
+                .catatan {
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #333;
+                    letter-spacing: 1px;
+                }
+            }
+            &-button {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 15px;
+                left: 0px;
+                .btn-1 {
+                    margin-top: 20px;
+                    padding: 5px 15px;
+                    background-color: #ff008c;
+                    border: none;
+                    color: #fff;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    &:hover {
+                        background-color: #fff;
+                        color: #ff008c;
+                    }
+                }
+                .btn-2 {
+                    margin-top: 20px;
+                    padding: 5px 15px;
+                    background-color: #fff;
+                    border: 1px solid #ff008c;
+                    color: #ff008c;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    &:hover {
+                        background-color: #ff008c;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dark {
+    width: 100%;
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #333;
+    .darkCatatanAktif {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 15px;
+        color: #b1b1b1;
+        letter-spacing: 1px;
+    }
+    .wrap-card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+        .darkEmpety {
+            color: #b1b1b1;
+            margin-top: 20px;
+        }
+        .card {
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-color: transparent;
+            border: 1px solid #ff008c;
+            border-radius: 10px;
+            position: relative;
+            &-desc {
+                position: relative;
+                width: 100%;
+                padding: 0px 0px 20px 0px;
+                margin-bottom: 30px;
+                .darkJudul {
+                    font-size: 30px;
+                    font-weight: 600;
+                    color: #b1b1b1;
+                }
+                .darkDate {
+                    font-size: 10px;
+                    color: #b1b1b1;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+                .darkCatatan {
+                    font-size: 13px;
+                    color: #b1b1b1;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                }
+            }
+            &-button {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 15px;
+                left: 0px;
+                .btn-1 {
+                    margin-top: 20px;
+                    padding: 5px 15px;
+                    background-color: #ff008c;
+                    border: none;
+                    color: #fff;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    &:hover {
+                        background-color: #fff;
+                        color: #ff008c;
+                    }
+                }
+                .btn-2 {
+                    margin-top: 20px;
+                    padding: 5px 15px;
+                    background-color: #fff;
+                    border: 1px solid #ff008c;
+                    color: #ff008c;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    &:hover {
+                        background-color: #ff008c;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
