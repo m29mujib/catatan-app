@@ -5,10 +5,10 @@ import ListCatatan from './components/listCatatan/ListCatatan'
 import './App.scss'
 import Arsip from './components/arsip/Arsip'
 import { useState } from 'react'
-import { Data } from '../utils/data'
+import { getInitialData, showFormattedDate } from '../utils/index';
 function App() {
      const [dataArsip, setDataArsip] = useState([])
-     const [data, setData] = useState(Data)
+     const [data, setData] = useState(getInitialData)
      const [search, setSearch] = useState("")
      const onSearchData = (e) => {
       setSearch(e.target.value)
@@ -18,8 +18,8 @@ function App() {
     <div>
       <Navbar onSearchData={onSearchData}/>
       <Main data={data} setData={setData}/>
-      <ListCatatan search={search} data={data} setData={setData} dataArsip={dataArsip} setDataArsip={setDataArsip}/>
-      <Arsip data={data} setData={setData} dataArsip={dataArsip} setDataArsip={setDataArsip}/>
+      <ListCatatan search={search} data={data} setData={setData} dataArsip={dataArsip} setDataArsip={setDataArsip} showFormattedDate={showFormattedDate}/>
+      <Arsip data={data} setData={setData} dataArsip={dataArsip} setDataArsip={setDataArsip} showFormattedDate={showFormattedDate}/>
     </div>
   )
 }

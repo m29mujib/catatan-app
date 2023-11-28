@@ -3,7 +3,7 @@ import Up from '../../assets/up.png'
 import React, { useContext, useState } from 'react'
 import './Arsip.scss'
 import { DarkProvider } from '../../context/DarkMode'
-const Arsip = ({data, setData, dataArsip, setDataArsip}) => {
+const Arsip = ({data, setData, dataArsip, setDataArsip, showFormattedDate}) => {
   const [isDropDown, setIsDropDown] = useState(false)
 
   const { isDarkMode } = useContext(DarkProvider)
@@ -23,10 +23,14 @@ const Arsip = ({data, setData, dataArsip, setDataArsip}) => {
     setData([...data, itemToRestore]);
 };
 
+const date = new Date()
+
   return (
         <div className={isDarkMode ? "darkArsip" : "contain"}>
-          <p className='arsip'>{isDropDown? "tutup arsip" : "buka arsip"}</p>
-          <button onClick={() => setIsDropDown((prev) => !prev)} className='button'><img src={isDropDown? Up : Down} className='icon'/></button>
+              <div className='wrapButton'>
+                <p className='arsip'>{isDropDown? "tutup arsip" : "buka arsip"}</p>
+                <button onClick={() => setIsDropDown((prev) => !prev)} className='button'><img src={isDropDown? Up : Down} className='icon'/></button>
+              </div>
               <div className="wrap-card">
                 {
                   isDropDown&&
@@ -36,7 +40,7 @@ const Arsip = ({data, setData, dataArsip, setDataArsip}) => {
                         <div className="card">
                             <div className='card-desc'>
                               <h1 className={isDarkMode ? "darkJudul" : "judul"}>{item.title}</h1>
-                              <p className={isDarkMode ? "darkDate" : "date"}>{item.createdAt}</p>
+                              <p className={isDarkMode ? "darkDate" : "date"}>{showFormattedDate(date)}</p>
                               <p className={isDarkMode ? "darkCatatan" : "catatan"}>{item.body}</p>
                             </div>
                             <div className='card-button'>

@@ -1,15 +1,16 @@
 import React, {  useContext, useState } from 'react'
 import './Main.scss'
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import { DarkProvider } from '../../context/DarkMode'
 
 export default function Main({data, setData}) {
    const [ values, setValues ] = useState([
     {
+      id: 1,
       title: "",
-      createdAt: "",
+      body: "",
       archived: false,
-      body: ""
+      createdAt: ""
     }
   ])
   const { isDarkMode } = useContext(DarkProvider)
@@ -20,7 +21,7 @@ export default function Main({data, setData}) {
       if (value.length <= maxTitleLength) {
         setValues({
             ...values,
-            [name]: value, id: uuidv4()
+            [name]: value
           })   
       } else {
         alert("input tidak boleh melebihi 20 karakter")
@@ -40,8 +41,11 @@ export default function Main({data, setData}) {
     tambahList()
 
     setValues({
+      id: 1,
       title: "",
       body: "",
+      archived: false,
+      createdAt: ""
     })
   }
   const isDisabled = values.length <= 1;

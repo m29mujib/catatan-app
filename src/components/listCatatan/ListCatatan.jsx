@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { DarkProvider } from '../../context/DarkMode'
 import './ListCatatan.scss'
-export default function ListCatatan({search, data, setData, dataArsip, setDataArsip}) {
+export default function ListCatatan({search, data, setData, dataArsip, setDataArsip, showFormattedDate}) {
    const { isDarkMode } = useContext(DarkProvider)
 
    const deleteData = (id) => {
@@ -16,11 +16,8 @@ export default function ListCatatan({search, data, setData, dataArsip, setDataAr
     setDataArsip([...dataArsip, archivedItem]);
     setData(updatedList);
   }
-//   const currentDate = new Date();
-//   const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-//    if (date) {
-//       setDate([...date, currentDate.toLocaleDateString('en-us', options)])
-//    }
+
+  const date = new Date()
   return (
     <div className={isDarkMode ? "dark" : "wrap"}>
       <h1 className={isDarkMode ? 'darkCatatanAktif' : 'catatan-aktif'}>Catatan Aktif</h1>
@@ -36,7 +33,7 @@ export default function ListCatatan({search, data, setData, dataArsip, setDataAr
                <div className="card">
                   <div className='card-desc' key={item.id}>
                      <h1 className={isDarkMode ? "darkJudul" : "judul"}>{item.title}</h1>
-                     <p className={isDarkMode ? "darkDate" : "date"}>{item.createdAt}</p>
+                     <p className={isDarkMode ? "darkDate" : "date"}>{showFormattedDate(date)}</p>
                      <p className={isDarkMode ? "darkCatatan" : "catatan"}>{item.body}</p>
                   </div>
                   <div className='card-button'>
